@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Toko Kece</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: sans-serif; background: #f2f2f2; }
+    header { background: #1e88e5; color: white; padding: 20px; text-align: center; }
+    nav ul { list-style: none; display: flex; justify-content: center; margin-top: 10px; }
+    nav ul li { margin: 0 15px; }
+    nav ul li a { color: white; text-decoration: none; }
+    .hero { text-align: center; padding: 50px 20px; background: #4caf50; color: white; }
+    .products { padding: 40px 10%; text-align: center; }
+    .product-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .product { background: white; padding: 20px; border-radius: 10px; width: 220px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .product img { width: 100%; border-radius: 10px; }
+    .product h3 { margin: 10px 0; }
+    .product button { background: #1e88e5; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; }
+    footer { background: #333; color: white; text-align: center; padding: 20px; margin-top: 50px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Toko Kece</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Beranda</a></li>
+        <li><a href="#products">Produk</a></li>
+        <li><a href="#">Keranjang (<span id="cart-count">0</span>)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h2>Selamat datang di Toko Kece!</h2>
+    <p>Kami menjual produk terbaik untuk kamu</p>
+  </section>
+
+  <section id="products" class="products">
+    <h2>Produk Unggulan</h2>
+    <div class="product-list">
+      <div class="product">
+        <img src="https://via.placeholder.com/200x150?text=Produk+1" alt="Produk 1"/>
+        <h3>Kaos Keren</h3>
+        <p>Rp 100.000</p>
+        <button onclick="addToCart()">Tambah ke Keranjang</button>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/200x150?text=Produk+2" alt="Produk 2"/>
+        <h3>Topi Stylish</h3>
+        <p>Rp 75.000</p>
+        <button onclick="addToCart()">Tambah ke Keranjang</button>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/200x150?text=Produk+3" alt="Produk 3"/>
+        <h3>Sepatu Santai</h3>
+        <p>Rp 250.000</p>
+        <button onclick="addToCart()">Tambah ke Keranjang</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Toko Kece. Semua Hak Dilindungi.</p>
+  </footer>
+
+  <script>
+    let cartCount = 0;
+    function addToCart() {
+      cartCount++;
+      document.getElementById('cart-count').textContent = cartCount;
+    }
+  </script>
+
+</body>
+</html>
